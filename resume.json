@@ -1,0 +1,78 @@
+{
+  "name": "Satish Kumar",
+  "location": "Bangalore, Karnataka, 560107",
+  "contact": {
+    "phone": "+91 7829097550",
+    "email": "satish754ss@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/satishkumar"
+  },
+  "experience": [
+    {
+      "company": "Junglee Games (Flutter Entertainment Group)",
+      "role": "Senior Software Engineer",
+      "location": "Bangalore",
+      "duration": "Dec 2021 – Present",
+      "details": [
+        "Designed and implemented cross-platform UIs (Android/iOS, Web, macOS/Windows).",
+        "Built a Figma plugin for automated theme/asset extraction, ensuring consistency across multiple apps.",
+        "Developed modular, reusable components to improve scalability, maintainability, and multi-app support.",
+        "Resolved app crashes/ANRs, reducing crash rate by 1%, and optimized app size by 20%.",
+        "Worked as an Individual Contributor (IC), taking full ownership of architecture, feature development, testing, and deployment.",
+        "Collaborated closely with cross-functional teams to deliver features on time with high quality.",
+        "Mentored junior developers by providing reviews, technical guidance, and enforcing clean code practices.",
+        "Participated in product roadmap discussions, influencing feature prioritization with technical feasibility insights.",
+        "Enhanced performance monitoring by integrating analytics and crashlytics.",
+        "Contributed to SDK and plugin development for shared use across multiple apps."
+      ]
+    },
+    {
+      "company": "Embitel (Volkswagen Group)",
+      "role": "Senior Software Engineer",
+      "location": "Bangalore",
+      "duration": "Jul 2019 – Dec 2021",
+      "details": [
+        "Led end-to-end development of a multi-flavor e-commerce application from design to launch.",
+        "Delivered core features including PLP, PDP, Cart, Wishlist, Checkout, and Order Tracking.",
+        "Integrated services such as Google Maps, Firebase, Payment Gateways, and Analytics.",
+        "Managed theme configuration and branding for multiple app flavors.",
+        "Owned complete iOS delivery including App Store releases and APNs integration.",
+        "Improved performance & security by adding offline support, optimizing load times, and implementing secure authentication flows."
+      ]
+    },
+    {
+      "company": "Chimple",
+      "role": "Software Engineer",
+      "location": "Bangalore",
+      "duration": "Feb 2018 – Jul 2019",
+      "details": [
+        "Developed interactive learning-based apps and games, ensuring responsiveness across multiple screen sizes.",
+        "Built a Paint Application with complex canvas animations.",
+        "Collaborated with cross-functional teams to deliver features and resolve product issues."
+      ]
+    }
+  ],
+  "skills": [
+    "Flutter (Android/iOS, Web, macOS, Windows)", "Kotlin/Native Android", "Firebase", "RESTful APIs",
+    "WebSocket Integration", "Clean Architecture", "DSA & Problem Solving", "BLoC, GetX, Provider, RxDart",
+    "SDK & Plugin Development (Figma Tokens)", "TDD, Unit Testing, Golden Toolkit",
+    "HLD, SOLID Principles, Design Patterns", "Git, Bitbucket, CI/CD", "Play Store & App Store Deployment",
+    "Dart, Java, Kotlin, Shell Script, TypeScript", "GitHub Copilot, ChatGPT"
+  ],
+  "projects": [
+    "Howzat (Fantasy Game | 10M+ downloads): Modular features, secure payments & WebSockets, push notifications (FCM & APNs).",
+    "Poker (RMG Gaming | 1M+ downloads): Modular features, Razorpay & Juspay integration, Unit & Golden Testing, App Store & Play Store releases.",
+    "BMMI & Alosra Shops (E-Commerce): Designed & developed 2 mobile apps, integrated REST APIs, Firebase Authentication & Firestore, push notifications.",
+    "FREO Account (Fintech): Built a digital CASA savings account app using Flutter, Java Android, Firebase, and Bloc."
+  ],
+  "achievements": [
+    "Troubleshooting Excellence Award – Junglee Games - 2024",
+    "Spot Award for outstanding problem-solving – Junglee Games - 2025"
+  ],
+  "education": [
+    {
+      "degree": "B.Tech – Electronics & Communication Engineering",
+      "institute": "Maulana Abul Kalam Azad University of Technology, West Bengal",
+      "year": "2013 – 2017"
+    }
+  ]
+}

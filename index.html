@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satish Kumar | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #f4f7f9; color: #333; line-height: 1.6; }
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    h1, h2 { color: #1f3c88; margin-bottom: 15px; }
+    h3 { color: #555; margin-bottom: 20px; }
+    .section { margin-bottom: 40px; }
+    ul { list-style-type: disc; padding-left: 20px; margin-top: 10px; }
+    li { margin-bottom: 8px; }
+    a { text-decoration: none; color: #1f3c88; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+    .contact li { list-style: none; margin-bottom: 5px; }
+    .card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .experience-title { font-weight: 600; margin-bottom: 5px; }
+    .experience-company { font-style: italic; color: #666; margin-bottom: 10px; }
+    .skills ul { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skills li { background: #1f3c88; color: #fff; padding: 5px 10px; border-radius: 8px; font-size: 14px; }
+    @media (max-width: 600px) {
+      .skills ul { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="name"></h1>
+    <h3 id="location"></h3>
+
+    <div class="section contact">
+      <h2>Contact</h2>
+      <ul id="contact"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <div id="experience"></div>
+    </div>
+
+    <div class="section skills">
+      <h2>Skills</h2>
+      <ul id="skills"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <ul id="projects"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Achievements</h2>
+      <ul id="achievements"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <ul id="education"></ul>
+    </div>
+  </div>
+
+  <script>
+    fetch('resume.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('name').textContent = data.name;
+        document.getElementById('location').textContent = data.location;
+
+        const contactList = document.getElementById('contact');
+        for(const [key, value] of Object.entries(data.contact)) {
+          let li = document.createElement('li');
+          if(key === 'email') li.innerHTML = `📧 <a href="mailto:${value}">${value}</a>`;
+          else if(key === 'linkedin') li.innerHTML = `🔗 <a href="${value}" target="_blank">${value}</a>`;
+          else li.textContent = `${key}: ${value}`;
+          contactList.appendChild(li);
+        }
+
+        const expContainer = document.getElementById('experience');
+        data.experience.forEach(exp => {
+          let div = document.createElement('div');
+          div.className = 'card';
+          let title = document.createElement('div');
+          title.className = 'experience-title';
+          title.textContent = exp.role;
+          let company = document.createElement('div');
+          company.className = 'experience-company';
+          company.textContent = `${exp.company} (${exp.location}, ${exp.duration})`;
+          div.appendChild(title);
+          div.appendChild(company);
+          let ul = document.createElement('ul');
+          exp.details.forEach(d => {
+            let li = document.createElement('li');
+            li.textContent = d;
+            ul.appendChild(li);
+          });
+          div.appendChild(ul);
+          expContainer.appendChild(div);
+        });
+
+        const skillsList = document.getElementById('skills');
+        data.skills.forEach(skill => {
+          let li = document.createElement('li');
+          li.textContent = skill;
+          skillsList.appendChild(li);
+        });
+
+        const projectsList = document.getElementById('projects');
+        data.projects.forEach(p => {
+          let li = document.createElement('li');
+          li.textContent = p;
+          projectsList.appendChild(li);
+        });
+
+        const achievementsList = document.getElementById('achievements');
+        data.achievements.forEach(a => {
+          let li = document.createElement('li');
+          li.textContent = a;
+          achievementsList.appendChild(li);
+        });
+
+        const educationList = document.getElementById('education');
+        data.education.forEach(e => {
+          let li = document.createElement('li');
+          li.textContent = `${e.degree}, ${e.institute} (${e.year})`;
+          educationList.appendChild(li);
+        });
+      })
+      .catch(err => console.error('Error loading resume:', err));
+  </script>
+</body>
+</html>
